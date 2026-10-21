@@ -152,7 +152,8 @@ In this session, we are going to work on setup of the Control Board, which is th
 In this step, we are going to calibrate the mbot and then flash the firmware.
 
 1. **Place the MBot on the floor** in a spot with at least 2 feet of clear space around the robot, preferably on the same type of surface you plan to use it on.
-2. First, flash the calibration file to calibrate your MBot.
+2. **Put the Pico in BOOTSEL mode**: hold RST and BOOTSEL, release RST, then release BOOTSEL.
+3. First, flash the calibration file to calibrate your MBot.
     ```bash
     cd ~/mbot_firmware_ros/build
     sudo mbot-upload-firmware flash mbot_calibrate_classic.uf2
@@ -171,7 +172,7 @@ In this step, we are going to calibrate the mbot and then flash the firmware.
 
     <iframe width="400" height="227" src="https://www.youtube.com/embed/iIghZzf8ZQY?si=w_ultg6PtCwJVr2_" title="YouTube video player" frameborder="2" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
     - **Allow the Pico to finish its calibration routine without interference.** The calibration script will save the parameters onto the Pico’s memory.
-3. Then, you can flash the firmware that will run on the Pico during operation.
+4. Then, you can flash the firmware that will run on the Pico during operation. (Follow STEP-2: Put the Pico in BOOTSEL mode)
     ```bash
     sudo mbot-upload-firmware flash mbot_classic_ros.uf2 
     ```
@@ -180,8 +181,8 @@ If you didn't see the expected output above, but having the following output:
 ```bash
 No accessible RP-series devices in BOOTSEL mode were found.
 ```
-1. Check if all the cables are connected correctly (USB-C from Pico to Pi; Pico's power cable; the GREEN/WHITE jumper wire to the control board).
-2. If all the cables are connected, please use the "Manual Boot Mode" in this [tutorial](https://mbot.robotics.umich.edu/docs/setup/firmware/#1-manual-boot-mode) to flash the firmware.
+1. Check if all the cables are connected correctly (USB-C from Pico to Pi; Pico's power cable).
+2. If all the cables are connected, please refer the "Manual Boot Mode" in this [tutorial](https://mbot.robotics.umich.edu/docs/setup/firmware/#1-manual-boot-mode) to flash the firmware.
 
 ### 3. Minicom to verify the flash operation
 
